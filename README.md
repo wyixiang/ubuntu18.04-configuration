@@ -2,9 +2,10 @@
 
 
 ### 网易云
-```
-# 网易云音乐1.0.0(该版本较为好安装)下载地址
 
+#### 网易云音乐1.0.0(该版本较为好安装)//废弃，解决了1.1.0
+```
+# 下载地址
 http://s1.music.126.net/download/pc/netease-cloud-music_1.0.0_amd64_ubuntu16.04.deb
 
 # 将网易云音乐文件放到家目录
@@ -24,7 +25,7 @@ dpkg-deb -e netease-cloud-music_1.0.0_amd64_ubuntu16.04.deb netease-cloud-music/
 dpkg-deb -b netease-cloud-music
 
 #最后重新安装:
-dpkg -i  netease-cloud-music.deb
+sudo dpkg -i  netease-cloud-music.deb
 
 # 一般情况下会提示安装失败，缺失依赖，所以先解决依赖问题
 sudo apt install -f
@@ -37,6 +38,18 @@ sudo gedit /usr/share/applications/netease-cloud-music.desktop
 
 # 修改 Exec 这一行内容：
 Exec=sudo netease-cloud-music %U --force-device-scale-factor=2
+```
+
+#### 网易云音乐1.1.0
+```
+# 安装:
+sudo dpkg -i  netease-cloud-music_1.1.0_amd64_ubuntu.deb 
+
+# 修改桌面文件
+sudo gedit /usr/share/applications/netease-cloud-music.desktop
+
+# 对应行改为
+Exec=sh -c "unset SESSION_MANAGER && netease-cloud-music %U --force-device-scale-factor=2"
 ```
 
 ### ss
